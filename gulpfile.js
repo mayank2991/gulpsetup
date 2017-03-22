@@ -5,7 +5,6 @@ var
     newer = require('gulp-newer'),
     imagemin = require('gulp-imagemin'),
     concat = require('gulp-concat'),
-    deporder = require('gulp-deporder'),
     uglify = require('gulp-uglify'),
     sass = require('gulp-sass'),
     postcss = require('gulp-postcss'),
@@ -37,7 +36,6 @@ var
     gulp.task('js', function() {
 
         var jsbuild = gulp.src(folder.src + 'js/**/*')
-            .pipe(deporder())
             .pipe(concat('app.js'));
             
         if (!devBuild) {
